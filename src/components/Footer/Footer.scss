@@ -28,6 +28,12 @@
                 color: rgba(0, 0, 0, 0.5);
                 font-size: 14px;
             }
+            a.text{
+                &:hover{
+                    text-decoration: underline;
+                }
+                text-decoration: none;
+            }
             .c-item {
                 display: flex;
                 margin-bottom: 10px;

@@ -20,17 +20,16 @@ const Footer = () => {
                     <div className="c-item">
                         <FaLocationArrow />
                         <div className="text">
-                            Kayaloram Rd, Punnamada, Kottankulangara, Alappuzha,
-                            Kerala, 688006
+                            Uttara-11, Dhaka, Bangladesh
                         </div>
                     </div>
                     <div className="c-item">
                         <FaMobileAlt />
-                        <div className="text">Phone: 0471 272 0261</div>
+                        <a href="callto: 01824228717" className="text">Phone: 01824 22 8717</a>
                     </div>
                     <div className="c-item">
                         <FaEnvelope />
-                        <div className="text">Email: store@jsdev.com</div>
+                        <a href="mailto:zkranao@gmail.com" className="text">Email: zkranao@gmail.com</a>
                     </div>
                 </div>
                 <div className="col">

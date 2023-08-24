@@ -34,6 +34,12 @@
   color: rgba(0, 0, 0, 0.5);
   font-size: 14px;
 }
+.footer .footer-content .col a.text {
+  text-decoration: none;
+}
+.footer .footer-content .col a.text:hover {
+  text-decoration: underline;
+}
 .footer .footer-content .col .c-item {
   display: flex;
   margin-bottom: 10px;
