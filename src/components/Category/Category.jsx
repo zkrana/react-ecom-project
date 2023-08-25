@@ -1,22 +1,24 @@
-import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
-import Products from "../Products/Products";
+
+import catBanner from '../../assets/category/cat-1.jpg'
 import "./Category.scss";
+
 const Category = () => {
-    const { id } = useParams();
-    const { data } = useFetch(
-        `/api/products?populate=*&[filters][categories][id]=${id}`
-    );
+
     return (
-        <div className="category-main-content">
-            <div className="layout">
-                <div className="category-title">
-                    {
-                        data?.data?.[0]?.attributes?.categories?.data?.[0]
-                            ?.attributes?.title
-                    }
+        <div className="shop-by-category">
+            <div className="categories">
+                <div className="category">
+                    <img src={catBanner} alt='Cat' />
                 </div>
-                <Products innerPage={true} products={data} />
+                <div className="category">
+                    <img src={catBanner} alt='Cat' />
+                </div>
+                <div className="category">
+                    <img src={catBanner} alt='Cat' />
+                </div>
+                <div className="category">
+                    <img src={catBanner} alt='Cat' />
+                </div>
             </div>
         </div>
     );
