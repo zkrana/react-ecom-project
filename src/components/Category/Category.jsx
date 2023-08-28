@@ -1,24 +1,16 @@
 
-import catBanner from '../../assets/category/cat-1.jpg'
 import "./Category.scss";
+import Products from "../Products/Products";
 
 const Category = () => {
 
     return (
-        <div className="shop-by-category">
-            <div className="categories">
-                <div className="category">
-                    <img src={catBanner} alt='Cat' />
+        <div className="category-main-content">
+            <div className="layout">
+                <div className="category-title">
+                    category
                 </div>
-                <div className="category">
-                    <img src={catBanner} alt='Cat' />
-                </div>
-                <div className="category">
-                    <img src={catBanner} alt='Cat' />
-                </div>
-                <div className="category">
-                    <img src={catBanner} alt='Cat' />
-                </div>
+                <Products />
             </div>
         </div>
     );
