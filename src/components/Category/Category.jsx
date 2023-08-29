@@ -8,9 +8,9 @@ const Category = () => {
         <div className="category-main-content">
             <div className="layout">
                 <div className="category-title">
-                    category
+                    category title
                 </div>
-                <Products />
+                <Products innerPage={true} />
             </div>
         </div>
     );

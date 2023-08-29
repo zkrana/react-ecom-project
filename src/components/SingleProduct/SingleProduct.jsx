@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
-import { Context } from "../../utils/context";
-import { useParams } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
-import RelatedProducts from "./RelatedProducts/RelatedProducts";
+// import { Context } from "../../utils/context";
+// import { useParams } from "react-router-dom";
+// import useFetch from "../../hooks/useFetch";
+import singlePropduct from '../../assets/products/earbuds-prod-1.webp'
+// import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import {
     FaFacebookF,
     FaTwitter,
@@ -15,22 +16,25 @@ import "./SingleProduct.scss";
 
 const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1);
-    const { id } = useParams();
-    const { handleAddToCart } = useContext(Context);
-    const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+    // const { id } = useParams();
+    // const { handleAddToCart } = useContext(Context);
+    // const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
 
-    const decrement = () => {
-        setQuantity((prevState) => {
+    const decrement =  () =>{
+        
+        setQuantity( (prevState) => {
             if (prevState === 1) return 1;
             return prevState - 1;
-        });
-    };
-    const increment = () => {
-        setQuantity((prevState) => prevState + 1);
-    };
+        })
+    }
+    const increment = ()=>{
+        setQuantity( (prevState) =>{
+            return prevState + 1;
+        } )
+    }
 
-    if (!data) return;
-    const product = data?.data?.[0]?.attributes;
+    // if (!data) return;
+    // const product = data?.data?.[0]?.attributes;
 
     return (
         <div className="single-product-main-content">
@@ -38,16 +42,13 @@ const SingleProduct = () => {
                 <div className="single-product-page">
                     <div className="left">
                         <img
-                            src={
-                                process.env.REACT_APP_STRIPE_APP_DEV_URL +
-                                product.image.data[0].attributes.url
-                            }
+                            src={singlePropduct}
                         />
                     </div>
                     <div className="right">
-                        <span className="name">{product.title}</span>
-                        <span className="price">&#8377;{product.price}</span>
-                        <span className="desc">{product.description}</span>
+                        <span className="name">Category Name</span>
+                        <span className="price">&#8377;Price</span>
+                        <span className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat cumque sunt, dicta laborum accusantium repellendus sapiente debitis. Numquam quaerat minus sed eveniet ipsa ut amet eligendi molestias officia minima?</span>
 
                         <div className="cart-buttons">
                             <div className="quantity-buttons">
@@ -57,10 +58,6 @@ const SingleProduct = () => {
                             </div>
                             <button
                                 className="add-to-cart-button"
-                                onClick={() => {
-                                    handleAddToCart(data?.data?.[0], quantity);
-                                    setQuantity(1);
-                                }}
                             >
                                 <FaCartPlus size={20} />
                                 ADD TO CART
@@ -70,12 +67,9 @@ const SingleProduct = () => {
                         <span className="divider" />
                         <div className="info-item">
                             <span className="text-bold">
-                                Category:{" "}
+                                Category:
                                 <span>
-                                    {
-                                        product.categories.data[0].attributes
-                                            .title
-                                    }
+                                    Category Name
                                 </span>
                             </span>
                             <span className="text-bold">
@@ -91,10 +85,10 @@ const SingleProduct = () => {
                         </div>
                     </div>
                 </div>
-                <RelatedProducts
+                {/* <RelatedProducts
                     productId={id}
                     categoryId={product.categories.data[0].id}
-                />
+                /> */}
             </div>
         </div>
     );
