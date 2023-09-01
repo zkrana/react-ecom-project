@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 // import { useParams } from "react-router-dom";
 // import useFetch from "../../hooks/useFetch";
 import singlePropduct from '../../assets/products/earbuds-prod-1.webp'
-// import RelatedProducts from "./RelatedProducts/RelatedProducts";
+import RelatedProducts from "./RelatedProducts/RelatedProducts";
 import {
     FaFacebookF,
     FaTwitter,
